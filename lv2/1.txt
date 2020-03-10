@@ -1,0 +1,68 @@
+1.
+a) 
+- Content-Type: text/plain
+- Content-Length: 14
+- Server: nginx/1.2.2
+
+b)
+- Content-Type: image/png
+- Content-Length: 335525
+- Server: nginx/1.2.2
+
+c) 
+- Content-Type: application/octet-stream
+- Content-Length: 1137202
+- Server: nginx/1.2.2
+
+2.
+a) 
+- Request URL: http://localhost/lw1/mysql_is_a_database_server.html
+- Status Code: 404 Not Found
+4xx - Client error
+Error code. «апрашиваемый ресурс не найден на сервере.
+
+b) 
+- Request URL: http://localhost/lw1/nginx_is_fast_http_server.txt
+- Status Code: 200 OK
+2xx - Success
+Success code. «апрос выполнен успешно.
+
+c)
+- Request URL: http://localhost/lw1/php_is_a_server_scripting_language.php
+- Status Code: 302 Found
+3xx - Redirect 
+Redirect. «апрошенный ресурс был временно перемещен в URL-адрес, указанный в Location заголовке.
+
+Request URL: http://127.0.0.1/lw1/php_is_a_server_scripting_language.php
+Status Code: 302 Found
+Location: http://fi2.php.net/manual/ru/
+
+Request URL: http://fi2.php.net/manual/ru/
+Status Code: 301 Moved Permanently
+Location: https://www.php.net/manual/ru/
+
+d)
+
+- Request URL: http://localhost/lw1/javascript_is_a_client_side_language.php?how_to_work=hardly
+- Status Code: 400 Work hard!
+—пециальное поведение веб сервера дл¤ всех параметров кроме '{"how_to_work":"hard"}'.
+
+3. 
+Атрибут charset определяет кодировку символов для документа HTML. 
+Браузеру нужно знать в какой кодировке отображать страницу.
+
+В случае если кодировка НЕ указана, браузер выберет ее автоматически.
+Если кодировка указана неверно, браузер отобразит в заданой кодировке. Получим нечитаемый текст.
+
+В примере http://localhost/lw1/all_begin_from_http.html отдается нечитаемый текст, т.к. не указана кодировка в заголовках html.\
+Как исправить:
+- Указать кодировку в html  '<meta charset="utf-8">'
+- Указать кодировку в conf nginx  'charset  utf-8;'
+
+
+
+
+
+
+
+
