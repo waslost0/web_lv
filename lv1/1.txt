@@ -59,10 +59,3 @@ Error code. Плохой запрос от клиента.
 - Указать кодировку в html  '<meta charset="utf-8">'
 - Указать кодировку в conf nginx  'charset  utf-8;'
 
-
-
-
-
-
-
-
