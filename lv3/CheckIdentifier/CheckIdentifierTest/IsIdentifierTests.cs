@@ -15,7 +15,7 @@ namespace CheckIdentifierTest
 
 
             bool result = Program.ParseArgs(stringArray);
-            
+
 
             Assert.IsFalse(result);
         }
@@ -60,7 +60,7 @@ namespace CheckIdentifierTest
         {
             IsIdentifier checkIdentifier = new IsIdentifier();
             bool result = checkIdentifier.IsValidIdentifier("1abc");
-            Assert.IsTrue(result);
+            Assert.IsFalse(result);
         }
 
         [TestMethod]
@@ -111,6 +111,52 @@ namespace CheckIdentifierTest
             Assert.IsTrue(result);
         }
 
+        [TestMethod]
+        public void CyrillicCharcter()
+        {
+            IsIdentifier checkIdentifier = new IsIdentifier();
+            bool result = checkIdentifier.IsValidIdentifier("ö");
+            Assert.IsFalse(result);
+        }
 
+        [TestMethod]
+        public void CyrillicString()
+        {
+            IsIdentifier checkIdentifier = new IsIdentifier();
+            bool result = checkIdentifier.IsValidIdentifier("ïðîôèëü");
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void InputStringIncludeCyrilliCharacter()
+        {
+            IsIdentifier checkIdentifier = new IsIdentifier();
+            bool result = checkIdentifier.IsValidIdentifier("usrÍame");
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void SpaceCharacter()
+        {
+            IsIdentifier checkIdentifier = new IsIdentifier();
+            bool result = checkIdentifier.IsValidIdentifier(" ");
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void BadCharIndexPositionOne()
+        {
+            IsIdentifier checkIdentifier = new IsIdentifier();
+            checkIdentifier.IsValidIdentifier("&");
+            Assert.AreEqual(1, checkIdentifier.InvalidIndex);
+        }
+
+        [TestMethod]
+        public void BadCharIndexPositionFive()
+        {
+            IsIdentifier checkIdentifier = new IsIdentifier();
+            checkIdentifier.IsValidIdentifier("user&");
+            Assert.AreEqual(5, checkIdentifier.InvalidIndex);
+        }
     }
 }
