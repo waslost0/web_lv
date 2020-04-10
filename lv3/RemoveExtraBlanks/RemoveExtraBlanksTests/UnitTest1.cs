@@ -29,10 +29,10 @@ namespace RemoveExtraBlanksTests
         [TestMethod]
         public void ValidArgumentsCount()
         {
-            string[] stringArray = { "input.txt" };
+            string[] stringArray = { "input.txt", "output.txt" };
 
             bool result = Program.ParseArgs(stringArray);
-            Assert.IsFalse(result);
+            Assert.IsTrue(result);
         }
 
         [TestMethod]
