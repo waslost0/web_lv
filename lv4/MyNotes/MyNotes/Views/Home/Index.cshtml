@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="container row p-0 m-0">
+    <div class="col-6">
+        <h2 class="text-info">Api</h2>
+    </div>
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Api</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>Notes list GET</td>
+                <td><a href="/api/notes/list">/api/notes/list</a></td>
+            </tr>
+            <tr>
+                <td>Add note POST</td>
+                @*<td>/api/note/add <br /> { "name": "Note Name", <br/>    "description" : "some description" }</a></td>*@
+                <td>
+                    <code>/api/note/add </code>
+<pre><code> 
+{
+    "name" : "Note name",
+    "description" : "Some description"
+}
+</code></pre>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>

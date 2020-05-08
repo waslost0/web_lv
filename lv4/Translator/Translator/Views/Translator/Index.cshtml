@@ -1,0 +1,39 @@
+﻿@model TranslateViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="border" style="padding:30px;width:70%">
+    <form asp-action="Search" method="post">
+        <div class="text-danger" asp-validation-summary="All"></div>
+        <div class="form-group row">
+            <div class="col-4">
+                <label asp-for="@Model.WordToTranslate">Word to translate </label>
+            </div>
+            <div class="col-6">
+                <input asp-for="@Model.WordToTranslate" class="form-control" />
+                <span asp-validation-for="@Model.WordToTranslate" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3 offset-4">
+
+                <button type="submit" class="btn btn-primary form-control">
+                    Search
+                </button>
+
+            </div>
+            <div class="col-3">
+                <a asp-controller="Home" asp-action="Index" class="btn btn-success form-control">Back</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,22 @@
+﻿@model TranslateViewModel
+@{
+    ViewData["Title"] = "Translate";
+}
+
+
+<div class="container row p-0 m-0">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Word To Translate</th>
+                <th>Translated Word</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.WordToTranslate</td>
+                <td>@Model.TranslatedWord</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,5 @@
+again:опять
+already:уже
+also:также
+almost:почти
+usually:обычно

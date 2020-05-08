@@ -1,0 +1,59 @@
+﻿@model Note
+@{
+    ViewData["Title"] = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<h2 class="text-info">@(Model.Id == 0 ? "Create": "Edit") Note</h2>
+<br />
+
+
+<div class="border" style="padding:30px;width:70%">
+    <form asp-action="Save" method="post">
+        @if (Model.Id != 0)
+        {
+            <input type="hidden" asp-for="@Model.Id" />
+        }
+        <div class="text-danger" asp-validation-summary="All"></div>
+        <div class="form-group row">
+            <div class="col-4">
+                <label asp-for="@Model.Name">Name</label>
+            </div>
+            <div class="col-8">
+                <input asp-for="@Model.Name" class="form-control" />
+                <span asp-validation-for="@Model.Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-4">
+                <label asp-for="@Model.Description">Description</label>
+            </div>
+            <div class="col-8">
+                <textarea asp-for="@Model.Description" class="form-control" ></textarea>
+                <span asp-validation-for="@Model.Description" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-4 offset-4">
+                <button type="submit" class="btn btn-primary form-control">
+                    @(Model.Id!=0 ? "Update":"Create")
+                </button>
+            </div>
+            <div class="col-4" >
+                <a asp-action="List" class="btn btn-success form-control">Back to List</a>
+            </div>
+        </div>
+
+
+    </form>
+</div>
+
+
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
