@@ -9,7 +9,7 @@ function loadDataTable() {
 
     dataTable = $('#DT_load').dataTable({
         "ajax": {
-            "url": "/api/notes",
+            "url": "/api/notes/list",
             "type": "GET",
             "datatype": "json",
             "dataSrc": ""
